@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ultimate Football App</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- ===================================== -->
+    <!-- NAVBAR -->
+    <!-- ===================================== -->
+
+    <nav class="navbar">
+
+        <div class="logo-section">
+
+            <i class="fa-solid fa-futbol football-icon"></i>
+
+            <h1>FootballHub</h1>
+
+        </div>
+
+        <div class="nav-actions">
+
+            <button id="themeToggle">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+
+        </div>
+
+    </nav>
+
+    <!-- ===================================== -->
+    <!-- HERO -->
+    <!-- ===================================== -->
+
+    <header class="hero">
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+
+            <h2>Live Football Data</h2>
+
+            <p>
+                Explore leagues, recent matches,
+                standings, statistics, and more.
+            </p>
+
+        </div>
+
+    </header>
+
+    <!-- ===================================== -->
+    <!-- MAIN APP -->
+    <!-- ===================================== -->
+
+    <main class="app-container">
+
+        <!-- LEFT PANEL -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-card">
+
+                <h3>Select League</h3>
+
+                <select id="leagueSelect">
+
+                    <option value="39">
+                        Premier League
+                    </option>
+
+                    <option value="140">
+                        La Liga
+                    </option>
+
+                    <option value="135">
+                        Serie A
+                    </option>
+
+                    <option value="78">
+                        Bundesliga
+                    </option>
+
+                    <option value="61">
+                        Ligue 1
+                    </option>
+
+                </select>
+
+            </div>
+
+            <div class="sidebar-card">
+
+                <h3>Search Team</h3>
+
+                <input
+                    type="text"
+                    id="teamSearch"
+                    placeholder="Search club..."
+                >
+
+            </div>
+
+            <div class="sidebar-card">
+
+                <h3>Filters</h3>
+
+                <label>
+                    <input type="checkbox" id="showFinished" checked>
+                    Finished Games
+                </label>
+
+                <label>
+                    <input type="checkbox" id="showLive" checked>
+                    Live Games
+                </label>
+
+            </div>
+
+            <div class="sidebar-card">
+
+                <button id="loadMatchesBtn">
+                    Load Matches
+                </button>
+
+            </div>
+
+        </aside>
+
+        <!-- CONTENT -->
+
+        <section class="content">
+
+            <!-- TOP STATS -->
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <h4>Total Matches</h4>
+
+                    <p id="totalMatches">
+                        0
+                    </p>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <h4>Goals</h4>
+
+                    <p id="totalGoals">
+                        0
+                    </p>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <h4>Live Games</h4>
+
+                    <p id="liveGames">
+                        0
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- LOADING -->
+
+            <div id="loadingSection" class="hidden">
+
+                <div class="loader"></div>
+
+                <p>Loading matches...</p>
+
+            </div>
+
+            <!-- ERROR -->
+
+            <div id="errorBox" class="hidden">
+
+                <p>
+                    Failed to load data.
+                </p>
+
+            </div>
+
+            <!-- MATCHES -->
+
+            <div id="matchesGrid">
+
+                <!-- Cards injected here -->
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- ===================================== -->
+    <!-- MODAL -->
+    <!-- ===================================== -->
+
+    <div id="matchModal" class="modal hidden">
+
+        <div class="modal-content">
+
+            <span id="closeModal">&times;</span>
+
+            <div id="modalBody">
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ===================================== -->
+    <!-- FOOTER -->
+    <!-- ===================================== -->
+
+    <footer>
+
+        <p>
+            FootballHub © 2026
+        </p>
+
+    </footer>
+
+    <!-- ===================================== -->
+    <!-- SCRIPT -->
+    <!-- ===================================== -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
